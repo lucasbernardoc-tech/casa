@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Escala de Limpeza | Atividades do dia</title>
+    <meta name="description" content="Veja as atividades de limpeza do dia e quem é o responsável, com a escala completa do mês." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="head">
+        <p class="kicker">Escala de Limpeza</p>
+        <h1 id="dateLabel">—</h1>
+      </header>
+
+      <section class="card person">
+        <p class="label">Responsável de hoje</p>
+        <p class="name" id="personName">—</p>
+        <p class="sublabel" id="yesterdayLabel">—</p>
+      </section>
+
+      <section class="card">
+        <p class="label">Atividades</p>
+        <ol class="tasks" id="taskList"></ol>
+      </section>
+
+      <!-- Tabela: Dia da Máquina de Lavar -->
+      <section class="card">
+        <p class="label">Dia da Máquina de Lavar</p>
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Dia</th>
+              <th>Responsável</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-day="1">
+              <td>Segunda</td>
+              <td class="person-cell">Caio</td>
+            </tr>
+            <tr data-day="2">
+              <td>Terça</td>
+              <td class="person-cell">Daniel</td>
+            </tr>
+            <tr data-day="3">
+              <td>Quarta</td>
+              <td class="person-cell">Derick</td>
+            </tr>
+            <tr data-day="4">
+              <td>Quinta</td>
+              <td class="person-cell">Micaella</td>
+            </tr>
+            <tr data-day="5">
+              <td>Sexta</td>
+              <td class="person-cell">Vitor</td>
+            </tr>
+            <tr data-day="6">
+              <td>Sábado</td>
+              <td class="person-cell">Lucas</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <button class="btn" id="openBtn" type="button">Ver escala do mês</button>
+
+      <footer class="foot">Rodízio contínuo de 6 pessoas nos dias úteis.</footer>
+    </main>
+
+    <div class="overlay" id="overlay" hidden>
+      <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="monthTitle">
+        <div class="sheet-head">
+          <h2 id="monthTitle">Escala do mês</h2>
+          <button class="close" id="closeBtn" type="button" aria-label="Fechar">×</button>
+        </div>
+        <div class="sheet-body">
+          <table class="month" id="monthTable"></table>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
